@@ -4,6 +4,9 @@ const allusersHtml = document.getElementById("allusers");
 const localVideo = document.getElementById("localVideo");
 const remoteVideo = document.getElementById("remoteVideo");
 const endCallBtn = document.getElementById("end-call-btn");
+const muteBtn = document.getElementById("mute-btn");// Mute button reference
+const videoBtn = document.getElementById("video-btn"); // Video button reference
+
 const socket = io();
 let localStream;
 let caller = [];
@@ -64,6 +67,33 @@ const PeerConnection = (function ()
         }
     }
 })();
+
+// Mute/Unmute Logic
+let isMuted = false;
+muteBtn.addEventListener("click", () =>
+{
+    const audioTrack = localStream.getAudioTracks()[0];
+    if (audioTrack)
+    {
+        audioTrack.enabled = !audioTrack.enabled; // Toggle audio track enabled status
+        isMuted = !isMuted;
+        muteBtn.textContent = isMuted ? "Unmute" : "Mute"; // Update button text
+    }
+});
+
+// Video On/Off Logic
+let isVideoOff = false;
+videoBtn.addEventListener("click", () =>
+{
+    const videoTrack = localStream.getVideoTracks()[0];
+    if (videoTrack)
+    {
+        videoTrack.enabled = !videoTrack.enabled; // Toggle video track enabled status
+        isVideoOff = !isVideoOff;
+        videoBtn.textContent = isVideoOff ? "Turn Video On" : "Turn Video Off"; // Update button text
+    }
+});
+
 
 // handle browser events
 createUserBtn.addEventListener("click", (e) =>
@@ -184,5 +214,7 @@ const startMyVideo = async () =>
         localVideo.srcObject = stream;
     } catch (error) { }
 }
+
+
 
 startMyVideo();
