@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
 /* 33B816 */
 html {
 	font-size: 10px;
 }
+
 body {
 	background: #eee;
 	font-size: 1.6rem;
 	font-family: "Lora", serif;
 }
+
 ul li {
 	list-style: none;
 }
@@ -21,12 +25,15 @@ ul li {
 .lg-h-font {
 	font-size: 3.2rem;
 }
+
 .h-font {
 	font-size: 1.9rem;
 }
+
 .p-font {
 	font-size: 1.4rem;
 }
+
 .s-font {
 	font-size: 1rem;
 }
@@ -41,13 +48,15 @@ ul li {
 .caller-list-heading {
 	margin: 1rem 1.5rem;
 }
+
 .caller-list-wrapper {
 	flex-basis: 30rem;
 	border-right: 1px solid black;
 	height: 100%;
 	background: white;
 }
-.caller-list > li {
+
+.caller-list>li {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -58,6 +67,7 @@ ul li {
 	cursor: pointer;
 	font-size: 1.6rem;
 }
+
 .call-btn {
 	border: none;
 	background: transparent;
@@ -74,10 +84,12 @@ ul li {
 	justify-content: center;
 
 }
+
 .video-streams {
 	display: flex;
 	gap: 2rem;
 }
+
 .local-video,
 .remote-video {
 	flex: 1;
@@ -104,7 +116,7 @@ ul li {
 	background: white;
 	box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.2);
 	border-radius: 50%;
-	margin: 2rem 0; 
+	margin: 2rem 0;
 	cursor: pointer;
 }
 
@@ -115,6 +127,7 @@ ul li {
 .username-input {
 	margin: 2rem 0;
 }
+
 .username-input input {
 	width: 30rem;
 	height: 4rem;
@@ -125,9 +138,11 @@ ul li {
 	font-family: 'Lora', sans-serif;
 	font-weight: 500;
 }
+
 .username-input input::placeholder {
 	font-family: "Lora", serif;
 }
+
 .username-input button {
 	height: 4rem;
 	outline: none;
